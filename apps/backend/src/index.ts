@@ -1,15 +1,10 @@
-import express from 'express';
-const app = express();
-const port = process.env.PORT;
+import { app } from "./app";
+import { connectDB } from "./db";
 
-app.get('/', (req, res) => {
-  res.json({ok: 1});
-})
-
-app.get('/hello', (req, res) => {
-  res.json({hello: 'world'});
-})
-
-app.listen(port ?? 4000 , () => {
-  console.log(`Example moseying on ${port}`);
-})
+connectDB().then(() => {
+  app.listen(process.env.PORT ?? 8000, () => {
+    console.log(`Moseying on ${process.env.PORT}`);
+  })
+}).catch(() => {
+  console.log('MongoDB connection failed')
+});
