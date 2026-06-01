@@ -10,11 +10,16 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "bcrypt": "^6.0.0",
     "express": "^5.2.1",
-    "mongoose": "^9.6.3"
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^9.6.3",
+    "mongoose-aggregate-paginate-v2": "^1.1.4"
   },
   "devDependencies": {
+    "@types/bcrypt": "^6.0.0",
     "@types/express": "^5.0.6",
+    "@types/jsonwebtoken": "^9.0.10",
     "@types/node": "^25.9.1"
   }
 }
